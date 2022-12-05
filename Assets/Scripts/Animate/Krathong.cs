@@ -5,27 +5,28 @@ using UnityEngine.UI;
 
 public class Krathong : MonoBehaviour
 {
-    [SerializeField] private float m_StartPositionX = -500;
-    [SerializeField] private float m_ResetPositionX = -500;
+    [SerializeField] private float m_StartPositionX = 0;
+    [SerializeField] private float m_ResetPositionX = -6.0f;
     [SerializeField] private float m_FloatingSpeed;
-    [SerializeField] private float m_RotateSpeed = 0.3f;
-    [SerializeField] private TextMeshProUGUI m_FBNameText;
-    [SerializeField] private TextMeshProUGUI m_WishText;
+    [SerializeField] private TextMeshPro m_FBNameText;
+    [SerializeField] private TextMeshPro m_WishText;
     private float m_ResetPositionY;
     public string m_FBName;
     public string m_Wish;
     public string m_UserId;
     public int m_KrathongId;
     public Transform m_Krathong;
-    public Image m_KrathongImage;
+    public SpriteRenderer m_KrathongImage;
     public int m_Id;
     public Action<int> OnReset;
+    public float m_RotateSpeed = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         RandomYPos();
-        this.transform.position = new Vector3(m_StartPositionX * m_Id, m_ResetPositionY, this.transform.position.z);
+        transform.position = new Vector3(m_StartPositionX * m_Id, m_ResetPositionY, 0);
+        m_RotateSpeed = UnityEngine.Random.Range(1, 2.5f);
     }
     /// <summary>
     /// Setup Krathong Data
@@ -69,14 +70,13 @@ public class Krathong : MonoBehaviour
 
         //Float
 
-        if (this.transform.position.x < Screen.width + 60)
+        if (transform.position.x < 12.25f)
         {
-            this.transform.Translate(new Vector3(m_FloatingSpeed, 0, 0) * Time.deltaTime);
-            this.transform.position = this.transform.position + new Vector3(m_FloatingSpeed, 0, 0) * Time.deltaTime;
+            transform.Translate(new Vector3(m_FloatingSpeed, 0, 0) * Time.deltaTime);
+            transform.position = transform.position + new Vector3(m_FloatingSpeed, 0, 0) * Time.deltaTime;
         }
         else
         {
-            int randomYPosition = UnityEngine.Random.Range(0, 2);
             RandomYPos();
             ResetKrathong();
         }
@@ -89,15 +89,15 @@ public class Krathong : MonoBehaviour
         int _randomYPosition = UnityEngine.Random.Range(0, 3);
         if (_randomYPosition == 0)
         {
-            m_ResetPositionY = 200f;
+            m_ResetPositionY = -0.3f;
         }
         else if (_randomYPosition == 1)
         {
-            m_ResetPositionY = 350f;
+            m_ResetPositionY = -1.5f;
         }
         else
         {
-            m_ResetPositionY = 500f;
+            m_ResetPositionY = -2.9f;
         }
     }
     /// <summary>
@@ -107,7 +107,7 @@ public class Krathong : MonoBehaviour
     {
         //Set Sprite
         m_KrathongImage.sprite = Resources.Load<Sprite>($"Sprites/krathong{m_KrathongId}");
-        this.transform.position = new Vector3(m_ResetPositionX * 6, m_ResetPositionY, this.transform.position.z);
+        transform.position = new Vector3(m_ResetPositionX * 8, m_ResetPositionY, transform.position.z);
         OnResetKrathong();
     }
     /// <summary>

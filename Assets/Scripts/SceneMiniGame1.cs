@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class SceneMiniGame1 : MonoBehaviour
 {
-
     [SerializeField] private GameObject m_KrathongPanel;
     [SerializeField] private GameObject m_ConfirmPanel;
     [SerializeField] private GameObject m_ErrorPanel;
@@ -71,7 +70,6 @@ public class SceneMiniGame1 : MonoBehaviour
         for (int i = 0; i < m_KrathongData.Length; i++)
         {
             GameObject _slot = Instantiate(m_Slot, new Vector2(0, 0), Quaternion.identity);
-            _slot.transform.localScale = new Vector3(2,2,2);
             _slot.GetComponent<Krathong_Slot>().SetUp(Int32.Parse(m_KrathongData[i].krathong_id), m_KrathongData[i].price_type, m_KrathongData[i].price, OnSelectKrathong);
             _slot.transform.SetParent(m_KrathongSlots.transform);
         }
@@ -82,7 +80,6 @@ public class SceneMiniGame1 : MonoBehaviour
     private void CreateKrathong(int id)
     {
         GameObject _krathong = Instantiate(m_Krathong, new Vector2(0, 0), Quaternion.identity);
-        _krathong.transform.localScale = new Vector3(2, 2, 2);
         _krathong.GetComponent<Krathong>().SetUp(id, m_CurrentKrathongData[id].krathong_id, m_CurrentKrathongData[id].userid, m_CurrentKrathongData[id].wish, m_CurrentKrathongData[id].fbname, OnResetKrathong);
         _krathong.transform.SetParent(m_KrathongParents.transform);
         m_KrathongCount++;

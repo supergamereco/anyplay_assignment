@@ -8,6 +8,7 @@ public class Krathong_Slot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI m_TextPrice;
     [SerializeField] private Image m_Image;
     [SerializeField] private Image m_PriceImage;
+    [SerializeField] private GameObject m_PriceIcon;
     public int m_Id;
     public int m_Price;
     public string m_PriceType;
@@ -19,6 +20,7 @@ public class Krathong_Slot : MonoBehaviour
     {
         Button _button = GetComponent<Button>();
         _button.onClick.AddListener(OnSelectButton);
+        transform.localScale = Vector3.one;
         UpdateSlots();
     }
     /// <summary>
@@ -54,10 +56,12 @@ public class Krathong_Slot : MonoBehaviour
         //Set Price
         if(m_Price <= 0)
         {
+            m_PriceIcon.SetActive(false);
             m_TextPrice.text = "FREE";
         }
         else
         {
+            m_PriceIcon.SetActive(true);
             m_TextPrice.text = m_Price.ToString();
         }
     }
