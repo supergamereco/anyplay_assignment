@@ -1288,7 +1288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -667, y: 229}
+  m_AnchoredPosition: {x: -667, y: 291}
   m_SizeDelta: {x: 354, y: 161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &843382945
@@ -1493,7 +1493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 734, y: -552}
+  m_AnchoredPosition: {x: 734, y: -490}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869835867
@@ -2846,7 +2846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 811, y: 422}
+  m_AnchoredPosition: {x: 811, y: 388}
   m_SizeDelta: {x: 118, y: 118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1578539446
@@ -2967,7 +2967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 274, y: -552}
+  m_AnchoredPosition: {x: 274, y: -490}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818287159
@@ -3851,7 +3851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5047785035625609216, guid: 1cd10e66beaee47819c8beee3bc942d5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 5047785035625609216, guid: 1cd10e66beaee47819c8beee3bc942d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3868,6 +3868,10 @@ PrefabInstance:
     - target: {fileID: 5047785035625609217, guid: 1cd10e66beaee47819c8beee3bc942d5, type: 3}
       propertyPath: m_Name
       value: Krathong_Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047785035625609217, guid: 1cd10e66beaee47819c8beee3bc942d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8667348179190742410, guid: 1cd10e66beaee47819c8beee3bc942d5, type: 3}
       propertyPath: m_AnchorMax.x
